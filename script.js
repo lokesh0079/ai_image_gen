@@ -1,3 +1,4 @@
+require('dotenv').config();
 const themeToggle=document.querySelector('.theme-toggle');
 const promptInput=document.querySelector('.prompt-input');
 const promptForm=document.querySelector('.prompt-form');
@@ -8,7 +9,7 @@ const countSelect=document.getElementById('count-select');
 const ratioSelect=document.getElementById('ratio-select');
 const gridGallery=document.querySelector('.gallery-grid');
 
-const API_KEY="";  //hugging face API key
+const API_KEY = process.env.API_KEY;  //hugging face API key
 
 
 const examplePrompts = [
@@ -169,6 +170,7 @@ promptInput.focus();
 
 promptForm.addEventListener('submit',handleFormSubmit);
 themeToggle.addEventListener("click",toggleTheme);
+
 
 
 
